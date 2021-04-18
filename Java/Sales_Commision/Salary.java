@@ -1,4 +1,4 @@
-package Java.Sales_Commision;
+
 
 import java.util.Scanner;
 

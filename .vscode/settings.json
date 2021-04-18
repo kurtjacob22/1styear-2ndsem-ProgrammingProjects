@@ -39,5 +39,8 @@
         "xstddef": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp"
-    }
+    },
+    "java.project.sourcePaths": [
+        "Java/Sales_Commision"
+    ]
 }
