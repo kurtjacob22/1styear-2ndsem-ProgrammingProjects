@@ -41,6 +41,7 @@
         "xutility": "cpp"
     },
     "java.project.sourcePaths": [
-        "Java/Sales_Commision"
+        "Java/Sales_Commision",
+        "Java/Lab_Exercise_01"
     ]
 }
