@@ -6,7 +6,7 @@ public class DisplayWholeNumbers {
         double length = 29.7;
         long referenceNumber = 998883723193101L;
 
-        System.out.println((double)examScore);
+        System.out.println(examScore);
         System.out.println((int)averageGrade);
         System.out.println(seconds_per_minute);
         System.out.println((int)length);
