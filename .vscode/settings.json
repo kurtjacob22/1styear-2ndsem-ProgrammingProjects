@@ -42,6 +42,7 @@
     },
     "java.project.sourcePaths": [
         "Java/Sales_Commision",
-        "Java/Lab_Exercise_01"
+        "Java/Lab_Exercise_01",
+        "Java/Receipt"
     ]
 }

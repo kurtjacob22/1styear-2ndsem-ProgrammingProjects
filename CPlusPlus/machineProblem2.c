@@ -4,7 +4,6 @@ void gotoxy(int x, int y){
     printf("%c[%d;%df", 0x1B, y, x);
 }// for turbo users: delete this function
 
-
 struct Candidate{
     char name[100]; // name of the candidate/president
     int votePerPrecint[4]; // number of votes per precint inside an array
@@ -137,13 +136,9 @@ int main(){
             max2 = totalVotesPerCandidate[i];
             track2 = i;
         }
-        
     }
-
     gotoxy(21 + ((track1) * 17), 17); printf("1st - %c", President[track1].name[0]); // prints the 1st
     gotoxy(21 + ((track2) * 17), 17); printf("2nd - %c", President[track2].name[0]); // prints the 2nd
-
     getch();
     return 0;
-    
 }
