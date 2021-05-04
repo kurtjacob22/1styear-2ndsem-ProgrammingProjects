@@ -30,6 +30,6 @@ public class SalaryCalculator {
         System.out.println("\tTotal Hours: " + hours);
         System.out.println("\tTotal Salary: P" + placeHolder);
 
-
+        scanner.close();
     }
 }

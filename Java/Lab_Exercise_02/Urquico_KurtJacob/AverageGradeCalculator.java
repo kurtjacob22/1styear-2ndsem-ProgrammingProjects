@@ -30,5 +30,6 @@ public class AverageGradeCalculator {
 
         System.out.println("\n\tYour average is " + placeHolder); // prints the average
         
+        scanner.close();
     }
 }
