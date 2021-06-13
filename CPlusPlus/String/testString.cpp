@@ -7,5 +7,6 @@ int main(){
 
     for(int i = 0; i <= name.length(); i++){
         cout << name.at(i) << endl;
+        
     }
 }

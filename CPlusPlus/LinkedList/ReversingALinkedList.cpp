@@ -6,7 +6,6 @@ struct Node{
  int data;
  Node *link;
 };
- 
 Node *head=NULL;
  
 //Function to reverse linked list

@@ -16,7 +16,7 @@ void Headers() {
 }
 
 void Labels() {
-	gotoxy(4, 4); printf("Precincts");
+    gotoxy(4, 4); printf("Precincts");
 	gotoxy(21, 4); printf("Candidate");
 	gotoxy(38, 4); printf("Candidate");
 	gotoxy(55, 4); printf("Candidate");
