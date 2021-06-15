@@ -27,7 +27,12 @@ public class StringManipulation {
         String str1 = "Class";
         String str2 = " class ";
         
-        System.out.println(str1.toLowerCase().equals(str2.trim()));
+        str1 = str1.toLowerCase();
+        str2 = str2.trim();
+
+        // str1.toLowerCase().equals(str2.trim())
+
+        System.out.println(str1.equals(str2));
     }
 
     public static void replaceToPercent(){

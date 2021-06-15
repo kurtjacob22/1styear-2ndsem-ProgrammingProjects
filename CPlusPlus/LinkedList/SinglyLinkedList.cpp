@@ -12,7 +12,7 @@ struct Node{
 	void insertBegining(Node* head){
 		Node* node = new Node();
 		insertionOfData(node);
-		node->nextNode = head;
+		node -> nextNode = head;
 		head = node;
 	}
 
@@ -36,6 +36,7 @@ struct Node{
 	}
 
 	void insertionOfData(Node* node){
+		cin.sync();
 		// insertion of data into node
 		cout << endl << "Enter Student Number: ";
 		getline(cin, node -> studentNumber);
@@ -51,11 +52,11 @@ struct Node{
 
 	}
 
-	void displayLinkedList(Node* head){ // param:: starting node
-		if(head == NULL){
-			cout << "Empty List";
-		}
-
+	void displayLinkedList(Node* node){ // param:: starting node
+		// if(head == NULL){
+		// 	cout << "Empty List";
+		// }
+		Node* head = node;
 		while(head != NULL){
 			cout << endl << "Student Number: " << head -> studentNumber << endl;
 			cout << "Student Name: " << head -> studentName << endl;
@@ -65,6 +66,9 @@ struct Node{
 		}
 	}
 };
+
+
+
 
 int main(){
 	system("cls");
@@ -77,7 +81,9 @@ int main(){
 	head -> GWA = 1.43;
 	head -> nextNode = NULL;
 
+	head -> insertEnding(head);
 	head -> insertBegining(head);
+	head -> insertEnding(head);
 	cout << endl;
 	system("pause");
 	system("cls");

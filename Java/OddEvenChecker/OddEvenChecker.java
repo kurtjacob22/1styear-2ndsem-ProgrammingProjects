@@ -8,7 +8,7 @@ public class OddEvenChecker {
 
         do{ // outer loop --> responsible if the user wants to use the program again
             do{ // inner loop --> verifies if the user input is a positive integer
-                if(counterToDisplayError > 0){ // displays error if and only if the counterToDisplatError is not 0
+                if(counterToDisplayError > 0){ // displays error if and only if the counterToDisplayError is not 0
                     System.out.println("\nError: negative values are not allowed");
                     System.out.print("Please ");
                 }
