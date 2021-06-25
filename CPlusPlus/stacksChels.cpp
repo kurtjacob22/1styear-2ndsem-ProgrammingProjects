@@ -1,37 +1,33 @@
-#include <stdio.h>
-#include <conio.h>
-#include <mem.h>
-#include <stdlib.h>
+#include <iostream>
+#include <cstring>
+
+using namespace std;
 
 struct record {
 	char StudNum[13];
 	char Name [25];
 	char CourseYear [11];
 	float GWA;
-	struct record *next;
-};
+	record *next;
+}*pushnode = NULL, *top = NULL, *popnode = NULL, *temptop = NULL;
 	
 	int stacks = 0;
-	struct record *pushnode = NULL;
-	struct record *top;
-	struct record *popnode = NULL;
-	struct record *temptop = NULL;
 	
 int main () {
 	system ("CLS");
 	int CaseNum;
 	
 	do {
-		printf("\n Please choose an action: \n\n");
-		printf("\t1 - Create Stack of Student Records\n");
-		printf("\t2 - Display created stack of Student Records \n");
-		printf("\t3 - Add another record to stack of Student Records\n");
-		printf("\t4 - Delete latest record in stack of Student Records \n");
-		printf("\t5 - EXIT \n\n");
-		printf("  Enter the number of operation to be performed => ");
-		scanf("%d",&CaseNum);	
-		printf("\n\n To continue, just press any key...");
-		getch();	
+		cout << "\n Please choose an action: \n\n";
+		cout << "\t1 - Create Stack of Student Records\n";
+		cout << "\t2 - Display created stack of Student Records \n";
+		cout << "\t3 - Add another record to stack of Student Records\n";
+		cout << "\t4 - Delete latest record in stack of Student Records \n";
+		cout << "\t5 - EXIT \n\n";
+		cout << "  Enter the number of operation to be performed => ";
+		cin >> CaseNum;	
+		cout << "\n\n To continue, just press any key...";
+		// getch();	
 	} while (CaseNum>5);
 	
 	char Temp;
@@ -48,12 +44,11 @@ int main () {
 			system("CLS");
 	
 			if((stacks == 1) && (top != NULL)) {
-				printf("An existing record is available. Do you want to create new stack of record? [Y/N] ");
-				scanf("%c", &Ans);
+				cout << "An existing record is available. Do you want to create new stack of record? [Y/N] ";
+				cin >> Ans;
 		
 				if(toupper(Ans) == 'N') {
 					printf("Returning to Main Menu...");
-					getch();
 					main();
 				}
 			}
@@ -61,19 +56,19 @@ int main () {
 			printf("\n------Creation of Nodes for the Stack of Student Records------\n");	
 	
 			do {
-				printf("\nStudent Record No. %d \n", ctr);
-				printf("\n\tEnter Student No. : ");
-				scanf("%s",&pushnode->StudNum);
-				scanf("%c", &Temp);
-				printf("\tEnter Student Name: ");
+				cout << "\nStudent Record No. " << ctr <<  "\n";
+				cout << "\n\tEnter Student No. : ";
+				cin >> pushnode->StudNum;
+				cin >> Temp;
+				cout << "\tEnter Student Name: ";
 				gets(pushnode->Name);
-				printf("\tEnter Course and Year: ");
+				cout << "\tEnter Course and Year: ";
 				gets(pushnode->CourseYear);
-				printf("\tEnter GWA: ");
-				scanf("%f", &pushnode->GWA);
-				scanf("%c", &Temp);
-				printf("\n Add another student record? [Y/N]: ");
-				scanf("%c", &Resp);		
+				cout << "\tEnter GWA: ";
+				cin >> pushnode->GWA;
+				cin >> Temp;
+				cout << "\n Add another student record? [Y/N]: ";
+				cin >> Resp;		
 				ctr++;
 		
 				if(toupper(Resp) == 'Y') {
@@ -100,11 +95,11 @@ int main () {
 				printf("\nSorry, no records are available.");
 			else {
 				do {
-					printf("\nStudent Record No. %d\n", ctr);
-					printf("\tStudent No. : %s", top->StudNum);
-					printf("\n\tStudent Name : %s", top->Name);
-					printf("\n\tCourse and Year : %s", top->CourseYear);
-					printf("\n\tGWA : %0.2f\n", top->GWA);			
+					cout << "\nStudent Record No. "<< ctr << "\n";
+					cout << "\tStudent No. : " << top->StudNum;
+					cout << "\n\tStudent Name : " << top->Name;
+					cout << "\n\tCourse and Year : " << top->CourseYear;
+					printf("\n\tGWA : %0.2f\n", top->GWA);
 					top = top->next;
 					popnode->next = NULL;			
 			
@@ -132,7 +127,6 @@ int main () {
 			
 				temptop = NULL;				
 			}
-			getch();
 			main();
 			break;
 			
@@ -142,17 +136,17 @@ int main () {
 	
 			system("CLS");
 	
-			printf("------Add NEW Student Record below.------\n");
-			printf("\n\tEnter Student No. : ");
-			scanf("%s",&pushnode->StudNum);
-			scanf("%c", &Temp);
-			printf("\tEnter Student Name: ");
+			cout << "------Add NEW Student Record below.------\n";
+			cout << "\n\tEnter Student No. : ";
+			cin >> pushnode->StudNum;
+			cin >> Temp;
+			cout << "\tEnter Student Name: ";
 			gets(pushnode->Name);
-			printf("\tEnter Course and Year: ");
+			cout << "\tEnter Course and Year: ";
 			gets(pushnode->CourseYear);
-			printf("\tEnter GWA: ");
-			scanf("%f", &pushnode->GWA);
-			scanf("%c", &Temp);
+			cout << "\tEnter GWA: ";
+			cin >> pushnode->GWA;
+			cin >> Temp;
 	
 			pushnode->next = NULL;
 			if(top == NULL) {
@@ -165,8 +159,7 @@ int main () {
 			}	
 			
 			pushnode = NULL;
-			printf("\nStudent record added...");
-			getch();
+			cout << "\nStudent record added...";
 			main();
 			break;
 			
@@ -177,22 +170,21 @@ int main () {
 			system("CLS");
 	
 			if(popnode == NULL)
-				printf("No records available...");
+				cout << "No records available...";
 			else {
 				top = top->next;
 				popnode->next = NULL;
-				printf("Record has been deleted successfully...");
+				cout << "Record has been deleted successfully...";
 			}
 	
 			free(popnode);
 			popnode = NULL;
-			getch();
 			main();
 			break;
 			
 			
 		case 5:
-			printf("Thank you for using the program...");
+			cout << "Thank you for using the program...";
 			exit(0);
 			break;	
 	}

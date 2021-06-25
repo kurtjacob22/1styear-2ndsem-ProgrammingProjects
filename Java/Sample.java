@@ -6,13 +6,11 @@ import java.util.Scanner;
 public class Sample {
 
 	public static void main(String[] args) {
-		String str1 = "Class";
-        String str2 = " class ";
-         
-        str1 = str1.toLowerCase();
-        str2 = str2.trim();
+        int counter = 0; 
+while (counter <= 50) 
+ counter = counter + 3;
+System.out.println(counter);
 
-        System.out.println(str1.equals(str2));	
 
 	}
 }
